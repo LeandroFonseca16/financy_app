@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../common/constants/app_colors.dart';
 import '../../common/constants/app_text_styles.dart';
+import '../../common/widgets/multi_text_button.dart';
 import '../../common/widgets/primary_button.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -15,18 +16,19 @@ class OnboardingPage extends StatelessWidget {
           children: [
             const SizedBox(height: 48.0),
             Expanded(
-              flex: 2,
-              child: Image.asset("assets/images/man.png"),
+              child: Image.asset("assets/images/onboarding_image.png"),
             ),
             Text('Gaste Inteligente',
+                textAlign: TextAlign.center,
                 style: AppTextStyles.mediumText
                     .copyWith(color: AppColors.greelightTwo)),
             Text('Renda Mais',
+                textAlign: TextAlign.center,
                 style: AppTextStyles.mediumText
                     .copyWith(color: AppColors.greelightTwo)),
             Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
+                  const EdgeInsets.only(left: 32.0, right: 32.0, top: 16.0, bottom: 4.0),
               child: PrimaryButton(
                 text: 'Começar',
                 onPressed: () {},
@@ -35,8 +37,21 @@ class OnboardingPage extends StatelessWidget {
             const SizedBox(
               height: 8.0,
             ),
-            Text('Já possui uma conta? Faça login',
-                style: AppTextStyles.smallText.copyWith(color: AppColors.grey)),
+            MultiTextButton(
+              onPressed: () {},
+              children: [
+                Text(
+                  'Já possui uma conta?',
+                  style:
+                      AppTextStyles.smallText.copyWith(color: AppColors.grey),
+                ),
+                Text(
+                  'Faça login',
+                  style: AppTextStyles.smallText
+                      .copyWith(color: AppColors.greelightTwo),
+                ),
+              ],
+            ),
             const SizedBox(height: 24.0),
           ],
         ),
